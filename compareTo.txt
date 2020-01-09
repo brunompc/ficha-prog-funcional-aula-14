@@ -1,0 +1,50 @@
+
+O sorted(comparator-fn) recebe 1 função de comparação cujo 
+protocolo é equivalente ao método compareTo() 
+da interface Comparable.
+
+----
+
+compareTo(Aluno a1, Aluno a2)
+
+	* Recebe 2 objectos e determina a sua ordem relativa
+	
+	* Se a ordem for irrelevante -> devolve 0 (zero)
+	
+	* Se o a1 for para aparecer primeiro -> devolve nr negativo (< 0)
+	
+	* Se o a2 for para aparecer primeiro -> devolev nr positivo (> 0)
+	
+---
+
+Exemplo:
+
+a1, nota=10
+a2, nota=10
+
+		a1.getNota() - a2.getNota() <=> 10 - 10 = 0
+		
+			(ordem irrelevante)
+
+a1, nota=12
+a2, nota=15
+
+		a1.getNota() - a2.getNota() <=> 12 - 15 = -3
+		
+			(a1 primeiro)
+			
+a1, nota=12
+a2, nota=10
+
+		a1.getNota() - a2.getNota() <=> 12-10 = 2
+		
+			(a2 primeiro)
+	
+
+---
+
+alunos.stream()
+	.filter(a -> a.estaAprovado())
+    .sorted((Aluno a1, Aluno a2) -> a1.getNota() - a2.getNota())
+    .forEach(a -> System.out.println(a.getNome() + " " + a.getNota()));
+
