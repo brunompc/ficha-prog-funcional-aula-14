@@ -93,6 +93,7 @@ public class Main {
 
         // 8) Obter 1 lista com os alunos aprovados.
 
+        // versão feia
         List<Aluno> aprovados = new ArrayList<>();
 
         alunos.stream()
@@ -103,6 +104,7 @@ public class Main {
 
         System.out.println("1) Tamanho: " + aprovados.size());
 
+        // versão bela
         List<Aluno> aprovados2 = alunos.stream()
                                         .filter(a -> a.estaAprovado())
                                         .collect(Collectors.toList());
