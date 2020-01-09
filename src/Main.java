@@ -109,5 +109,15 @@ public class Main {
 
         System.out.println("2) Tamanho: " + aprovados2.size());
 
+        // 15
+
+        List<String> dados = alunos.stream()
+                                    .map((Aluno a) -> a.getNome() + " : " + a.getNacionalidade() + " : " + a.getNota())
+                                    .collect(Collectors.toList());
+        for(String d : dados) {
+            System.out.println(d);
+        }
+		
+		
     }
 }
