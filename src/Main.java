@@ -47,7 +47,6 @@ public class Main {
                             .map(a ->a.getNota()) // stream com int(s)
                             .distinct()
                             .count();
-        //.forEach(n -> System.out.println(n));
 
         System.out.println("Nr Noats Dif: " + nrNotasDist);
 
@@ -85,6 +84,7 @@ public class Main {
             // hipóteses:
                 // a) ordenar os alunos por nota decrescente -> ir buscar o 1º (sorted + limit)
                 // b) transformar os alunos em notas -> ordenar os ints (decrescente) -> ir buscar o 1º (map+sorted+limit)
+                // c) usar o max()
 
         int notaMax = alunos.stream()
                     .max((a1, a2) -> a1.getNota() - a2.getNota())
