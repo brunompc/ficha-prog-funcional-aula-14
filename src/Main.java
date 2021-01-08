@@ -167,6 +167,10 @@ public class Main {
             System.out.println(nacionalidade);
         }
 
+        // 14)
+
+        // TODO - para sacar a 1ª letra podemos usar charAt(0)
+
         // 15) Obtenha uma List<String> em que cada elemento tem a seguinte sintaxe:
         //<Nome Aluno> : <Nacionalidade> : <Nota>
 
