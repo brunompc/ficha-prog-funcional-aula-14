@@ -111,6 +111,24 @@ public class Main {
 
         System.out.println("2) Tamanho: " + aprovados2.size());
 
+        // 9) Qual é a média das notas?
+
+        double media = alunos.stream()
+                                .map(a -> a.getNota())
+                                .collect(Collectors.averagingDouble(n -> n));
+
+        System.out.println("Média: " + media);
+
+        // versão alternativa
+        media = alunos.stream()
+                        .collect(Collectors.averagingDouble(a -> a.getNota()));
+
+        System.out.println("Média: " + media);
+
+        // 10) Qual é a média de notas dos alunos aprovados?
+
+
+
         // 12) Quantos alunos têm nota entre 10 e 15?
 
         long res = alunos.stream()
