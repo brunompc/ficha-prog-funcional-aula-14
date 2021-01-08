@@ -69,6 +69,8 @@ public class Main {
 
         // 5.1
 
+        // (Basta inverter a lógica do lambda que o sorted recebe)
+
         // 6) Quais os nomes e notas finais dos alunos reprovados, ordenados por nome (crescente)?
 
         alunos.stream()
