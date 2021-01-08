@@ -127,7 +127,20 @@ public class Main {
 
         // 10) Qual é a média de notas dos alunos aprovados?
 
+        double mediaAprovados = alunos.stream()
+                                        .filter(a -> a.estaAprovado())
+                                        .collect(Collectors.averagingDouble(a -> a.getNota()));
 
+        System.out.println("Média Aprovados: " + mediaAprovados);
+
+        // 11) Qual o nome, nacionalidade e nota dos 3 alunos com nota mais alta?
+
+        System.out.println("Os 3 melhores alunos:");
+
+        alunos.stream()
+                .sorted((a1, a2) -> a2.getNota() - a1.getNota()) // ordenar DESC
+                .limit(3)
+                .forEach(a -> System.out.println(a.getNome() + " " + a.getNacionalidade() + " " + a.getNota()));
 
         // 12) Quantos alunos têm nota entre 10 e 15?
 
