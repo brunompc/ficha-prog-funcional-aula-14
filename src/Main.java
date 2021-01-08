@@ -111,6 +111,29 @@ public class Main {
 
         System.out.println("2) Tamanho: " + aprovados2.size());
 
+        // 12) Quantos alunos têm nota entre 10 e 15?
+
+        long res = alunos.stream()
+                            .filter(a -> a.getNota() >= 10 && a.getNota() <= 15)
+                            .count();
+
+        System.out.println("Nr aluns com nota [10; 15] ");
+
+        // 13) Obtenha uma lista sem duplicados das nacionalidades dos alunos, ordenadas
+        //alfabeticamente.
+
+        List<String> nacionalidades = alunos.stream()
+                                            .map(a -> a.getNacionalidade())
+                                            .distinct()
+                                            .sorted((nacionalidade1, nacionalidade2) -> nacionalidade1.compareTo(nacionalidade2))
+                                            .collect(Collectors.toList());
+
+        System.out.println("Nacionalidades: ");
+
+        for(String nacionalidade : nacionalidades) {
+            System.out.println(nacionalidade);
+        }
+
         // 15
 
         List<String> dados = alunos.stream()
