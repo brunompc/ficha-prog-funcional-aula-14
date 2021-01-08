@@ -167,7 +167,8 @@ public class Main {
             System.out.println(nacionalidade);
         }
 
-        // 15
+        // 15) Obtenha uma List<String> em que cada elemento tem a seguinte sintaxe:
+        //<Nome Aluno> : <Nacionalidade> : <Nota>
 
         List<String> dados = alunos.stream()
                                     .map((Aluno a) -> a.getNome() + " : " + a.getNacionalidade() + " : " + a.getNota())
